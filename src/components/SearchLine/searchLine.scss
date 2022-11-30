@@ -10,6 +10,7 @@
 		padding-left: 15px;
 		font-size: 17px;
 		background: rgb(245, 245, 245);
+		user-select: none;
 
 		&:focus {
 			outline: 2px solid #FFDAB9;

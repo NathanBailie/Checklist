@@ -11,7 +11,6 @@ const Filters = ({ onSetFilterName }) => {
 	];
 	const [data, setData] = useState(buttons);
 
-
 	const onToggleProperty = (id) => {
 		const newArr = data.map(button => {
 			if (button.id === id) {
@@ -27,7 +26,7 @@ const Filters = ({ onSetFilterName }) => {
 		let buttonClasses = '';
 		if (button.active === true) {
 			buttonClasses = 'active'
-		}
+		};
 
 		return <button
 			key={index}

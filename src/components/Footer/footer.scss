@@ -9,6 +9,7 @@
 		padding-left: 10px;
 		font-size: 12px;
 		background: rgb(245, 245, 245);
+		user-select: none;
 
 		&:first-child {
 			flex-grow: 1;
@@ -39,8 +40,8 @@
 		background: #D2B48C;
 		user-select: none;
 		margin-left: 5px;
+		cursor: pointer;
 
-		// background: #000;
 		&:hover {
 			background: #dfc9ac;
 			transform: scale(1.02);

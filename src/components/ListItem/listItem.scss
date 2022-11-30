@@ -18,6 +18,7 @@
 
 	&__number {
 		grid-column: 1;
+		user-select: none;
 	}
 
 	&__note {
@@ -29,7 +30,7 @@
 			font-weight: bold;
 			font-style: italic;
 			// text-decoration: underline;
-			color: #FFA500;
+			color: DarkOrange;
 		}
 
 		&_completed {
@@ -52,9 +53,10 @@
 	&__note,
 	&__comment,
 	&__time {
+
 		&_completed {
 			text-decoration: line-through;
-			background: rgb(192, 192, 192);
+			background: rgb(201, 201, 201);
 			// border-radius: 7px;
 		}
 	}
@@ -74,6 +76,9 @@
 	&__important,
 	&__done,
 	&__remove {
+		cursor: pointer;
+		user-select: none;
+
 		img {
 			height: 35px;
 		}

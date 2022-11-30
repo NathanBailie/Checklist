@@ -34,7 +34,7 @@ const Footer = ({ onAddNewNote }) => {
 					setComment('');
 					setTime('')
 				}}
-			>Add Note</button>
+			>Add note</button>
 		</div>
 	);
 };
