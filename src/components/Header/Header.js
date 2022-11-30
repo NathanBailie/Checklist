@@ -5,7 +5,7 @@ const Header = ({ all, active, finished }) => {
 	return (
 		<div className='header'>
 			<h1>
-				Welcome to <span>CheckList</span>
+				Welcome to "MyCheckList"
 			</h1>
 			<div className="header__statistic">
 				<p>All notes:
