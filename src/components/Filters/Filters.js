@@ -1,8 +1,4 @@
-
-// styles
 import './filters.scss';
-
-// instruments
 import { useState } from 'react';
 import uuid from 'react-uuid';
 
@@ -13,25 +9,21 @@ const Filters = ({ onSetFilterName }) => {
 		{ id: uuid(), value: 'Active', active: false },
 		{ id: uuid(), value: 'Completed', active: false }
 	];
-
 	const [data, setData] = useState(buttons);
 
 
 	const onToggleProperty = (id) => {
 		const newArr = data.map(button => {
 			if (button.id === id) {
-				return { ...button, active: true }
+				return { ...button, active: true };
 			} else {
-				return { ...button, active: false }
-			}
+				return { ...button, active: false };
+			};
 		});
-
 		setData(newArr);
 	}
 
-
 	const res = data.map((button, index) => {
-
 		let buttonClasses = '';
 		if (button.active === true) {
 			buttonClasses = 'active'
@@ -45,14 +37,13 @@ const Filters = ({ onSetFilterName }) => {
 				onSetFilterName(button.value)
 			}}
 		>{button.value}</button>
-	})
-
+	});
 
 	return (
 		<div className="buttons">
 			{res}
 		</div>
-	)
-}
+	);
+};
 
 export default Filters;

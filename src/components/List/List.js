@@ -1,13 +1,8 @@
-import ListItem from '../ListItem';
-
-// styles
 import './list.scss';
-
-
+import ListItem from '../ListItem';
 
 
 const List = ({ finalData, onTogglePoperty, onRemoveItem, onEditItem, onChangeNote }) => {
-
 	return (
 		<div className='list'>
 			<div className="list__wraper">
@@ -24,7 +19,7 @@ const List = ({ finalData, onTogglePoperty, onRemoveItem, onEditItem, onChangeNo
 				onEditItem={onEditItem}
 				onChangeNote={onChangeNote} />
 		</div>
-	)
-}
+	);
+};
 
 export default List;

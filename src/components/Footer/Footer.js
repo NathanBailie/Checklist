@@ -1,9 +1,6 @@
-
-// styles
 import './footer.scss';
-
-// instruments
 import { useState } from 'react';
+
 
 const Footer = ({ onAddNewNote }) => {
 	const [note, setNote] = useState('');
@@ -39,7 +36,7 @@ const Footer = ({ onAddNewNote }) => {
 				}}
 			>Add Note</button>
 		</div>
-	)
-}
+	);
+};
 
 export default Footer;

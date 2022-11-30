@@ -1,14 +1,11 @@
-// styles
 import './app.scss'
 
-// components
 import Header from '../Header';
 import SearchLine from '../SearchLine';
 import Filters from '../Filters';
 import List from '../List';
 import Footer from '../Footer';
 
-// instruments
 import { useState } from 'react';
 import uuid from 'react-uuid';
 
@@ -17,24 +14,16 @@ const App = () => {
 	const notes = [
 		onCreateNewItem('first note', 'first comment', '-/-'),
 		onCreateNewItem('second note', 'second comment', '-/-'),
-		onCreateNewItem('third note', 'third comment', '-/-'),
+		onCreateNewItem('third note', 'third comment', '-/-')
 	];
-
-
-	// states
 	const [data, setData] = useState(notes);
 	const [filterName, setFilterName] = useState('All');
 	const [search, setSearch] = useState('');
-
-	// datas
 	const filteredData = onSetFilteredData(filterName);
 	const finalData = onGetFinalFilteredData(filteredData, search);
-
-	// statistic
 	const all = data.length;
 	const active = data.filter(note => note.vital).length;
 	const finished = data.filter(note => note.completed).length;
-
 
 
 	function onCreateNewItem(note, comment, time) {
@@ -48,18 +37,16 @@ const App = () => {
 			editNote: false,
 			editComment: false,
 			editTime: false
-		}
-	}
-
+		};
+	};
 
 	const onTogglePoperty = (id, property) => {
-
 		let secondProperty;
 		if (property === 'completed') {
 			secondProperty = 'vital';
 		} else if (property === 'vital') {
 			secondProperty = 'completed';
-		}
+		};
 
 		const newArr = data.map(item => {
 			if (item.id === id) {
@@ -67,38 +54,33 @@ const App = () => {
 					...item,
 					[property]: !item[property],
 					[secondProperty]: false
-				}
-			}
+				};
+			};
 			return item;
-		})
-
-		setData(newArr)
+		});
+		setData(newArr);
 	};
-
 
 	const onAddNewNote = (note, comment, time) => {
 		if (note.length === 0) {
 			return;
 		}
 		const newNote = onCreateNewItem(note, comment = '-/-', time = '-/-');
-		setData([...data, newNote])
+		setData([...data, newNote]);
 	}
 
-
 	const onRemoveItem = (id) => {
-		const newArr = data.filter(item => item.id !== id)
+		const newArr = data.filter(item => item.id !== id);
 		setData(newArr);
 	};
 
-
-
 	const onSetFilterName = (filterName) => {
 		setFilterName(filterName);
-	}
+	};
 
 	const onSetSearch = (searchWord) => {
 		setSearch(searchWord);
-	}
+	};
 
 	function onSetFilteredData(searchName) {
 		switch (searchName) {
@@ -107,12 +89,12 @@ const App = () => {
 			case 'Active':
 				return data.filter(item => item.vital);
 			case 'Completed':
-				return data.filter(item => item.completed)
+				return data.filter(item => item.completed);
 
 			default:
-				return data
-		}
-	}
+				return data;
+		};
+	};
 
 	function onGetFinalFilteredData(data, searhWord) {
 		return data.filter(item => {
@@ -126,31 +108,28 @@ const App = () => {
 
 		function finder(objectToFindIn, searhWord) {
 			return objectToFindIn.toLowerCase().indexOf(searhWord.toLowerCase()) > -1;
-		}
-	}
-
+		};
+	};
 
 	const onEditItem = (id, property) => {
 		const newArr = data.map(note => {
 			if (note.id === id) {
 				return { ...note, [property]: !note[property] }
-			}
+			};
 			return note;
-		})
+		});
 		setData(newArr);
-	}
-
+	};
 
 	const onChangeNote = (id, property, value) => {
 		const newArr = data.map(note => {
 			if (note.id === id) {
-				return { ...note, [property]: value }
-			}
+				return { ...note, [property]: value };
+			};
 			return note;
-		})
+		});
 		setData(newArr);
-	}
-
+	};
 
 	return (
 		<div className="container">
@@ -174,7 +153,7 @@ const App = () => {
 			<Footer
 				onAddNewNote={onAddNewNote} />
 		</div >
-	)
-}
+	);
+};
 
 export default App;

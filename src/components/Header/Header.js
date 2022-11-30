@@ -2,8 +2,6 @@ import './header.scss';
 
 
 const Header = ({ all, active, finished }) => {
-
-
 	return (
 		<div className='header'>
 			<h1>
@@ -25,7 +23,7 @@ const Header = ({ all, active, finished }) => {
 				</p>
 			</div>
 		</div>
-	)
-}
+	);
+};
 
 export default Header;
