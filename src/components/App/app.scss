@@ -1,0 +1,17 @@
+* {
+	box-sizing: border-box;
+}
+
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+	// border: 1px solid gray;
+	padding: 15px;
+}
+
+.filterWraper {
+	display: flex;
+	justify-content: space-between;
+	// border: 1px solid brown;
+	margin-bottom: 20px;
+}
