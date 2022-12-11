@@ -37,7 +37,8 @@ const ListItem = ({ finalData, onTogglePoperty, onRemoveItem, onEditItem, onChan
 						value={value}
 						className={inputClasses}
 						onChange={(e) => onChangeNote(id, editValueName, e.target.value)}
-						onBlur={() => onEditItem(id, editPermissionName)} />
+						onBlur={() => onEditItem(id, editPermissionName)}
+						onKeyDown={(e) => { e.key === 'Enter' && e.target.blur() }} />
 				);
 			};
 		};
