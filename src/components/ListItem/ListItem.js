@@ -81,19 +81,21 @@ const ListItem = ({ finalData, onTogglePoperty, onRemoveItem, onEditItem, onChan
 				<span
 					className="item__important"
 					onClick={() => onTogglePoperty(id, 'vital')}
-				>
+					title="Mark your note as active">
 					<img src={important} alt="important" />
 				</span>
 
 				<span
 					className="item__done"
-					onClick={() => onTogglePoperty(id, 'completed')}>
+					onClick={() => onTogglePoperty(id, 'completed')}
+					title="Mark your note as completed">
 					<img src={done} alt="done" />
 				</span>
 
 				<span
 					className="item__remove"
-					onClick={() => onRemoveItem(id)}>
+					onClick={() => onRemoveItem(id)}
+					title="Remove your note">
 					<img src={remove} alt="remove" />
 				</span>
 			</div>
