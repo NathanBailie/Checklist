@@ -10,19 +10,16 @@ const Footer = ({ onAddNewNote }) => {
 	return (
 		<div className="footer">
 			<input
-				// className='footer__note'
 				placeholder='type your note'
 				value={note}
 				onChange={(e) => setNote(e.target.value)}
 			/>
 			<input
-				// className='footer__comment'
 				placeholder='type comment'
 				value={comment}
 				onChange={(e) => setComment(e.target.value)}
 			/>
 			<input
-				// className='footer__time'
 				placeholder='type completion time'
 				value={time}
 				onChange={(e) => setTime(e.target.value)}

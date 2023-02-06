@@ -1,5 +1,4 @@
 import './listItem.scss';
-
 import important from './icons/important.png';
 import done from './icons/done.png';
 import remove from './icons/remove.png';

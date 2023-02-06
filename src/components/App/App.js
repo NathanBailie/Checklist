@@ -1,11 +1,9 @@
 import './app.scss'
-
 import Header from '../Header';
 import SearchLine from '../SearchLine';
 import Filters from '../Filters';
 import List from '../List';
 import Footer from '../Footer';
-
 import { useState } from 'react';
 import uuid from 'react-uuid';
 
@@ -24,7 +22,6 @@ const App = () => {
 	const all = data.length;
 	const active = data.filter(note => note.vital).length;
 	const finished = data.filter(note => note.completed).length;
-
 
 	function onCreateNewItem(note, comment, time) {
 		return {
@@ -64,10 +61,10 @@ const App = () => {
 	const onAddNewNote = (note, comment, time) => {
 		if (note.length === 0) {
 			return;
-		}
+		};
 		const newNote = onCreateNewItem(note, comment = '-/-', time = '-/-');
 		setData([...data, newNote]);
-	}
+	};
 
 	const onRemoveItem = (id) => {
 		const newArr = data.filter(item => item.id !== id);

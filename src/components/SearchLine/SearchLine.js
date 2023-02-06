@@ -2,7 +2,6 @@ import './searchLine.scss';
 
 
 const SearchLine = ({ onSetSearch }) => {
-
 	const onChangeSearchName = (e) => {
 		let value = e.target.value;
 		onSetSearch(value);

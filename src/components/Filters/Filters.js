@@ -20,7 +20,7 @@ const Filters = ({ onSetFilterName }) => {
 			};
 		});
 		setData(newArr);
-	}
+	};
 
 	const res = data.map((button, index) => {
 		let buttonClasses = '';
