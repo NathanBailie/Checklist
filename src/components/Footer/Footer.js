@@ -26,10 +26,10 @@ const Footer = ({ onAddNewNote }) => {
 			/>
 			<button
 				onClick={() => {
-					onAddNewNote(note, comment, time);
 					setNote('');
 					setComment('');
 					setTime('')
+					onAddNewNote(note, comment, time);
 				}}
 			>Add note</button>
 		</div>

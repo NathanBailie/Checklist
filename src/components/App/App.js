@@ -59,10 +59,13 @@ const App = () => {
 	};
 
 	const onAddNewNote = (note, comment, time) => {
+		console.log(time)
 		if (note.length === 0) {
 			return;
 		};
-		const newNote = onCreateNewItem(note, comment = '-/-', time = '-/-');
+		let сommentary = comment === '' ? '-/-' : comment;
+		let localTime = time === '' ? '-/-' : time;
+		const newNote = onCreateNewItem(note, сommentary, localTime);
 		setData([...data, newNote]);
 	};
 
